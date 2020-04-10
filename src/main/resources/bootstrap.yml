@@ -1,0 +1,29 @@
+spring.cloud.vault: 
+    #這邊是設定 vault 資訊   
+    host: 192.168.239.152
+    port: 8200
+    scheme: http
+    uri: http://192.168.239.152:8200
+    connection-timeout: 5000
+    read-timeout: 15000
+    config:
+        order: -10
+    authentication: TOKEN
+    token: 00000000-0000-0000-0000-000000000000
+    generic:
+      enabled: false
+     
+    database:      
+      enabled: true 
+      backend: mssql
+      role: readonly
+      username-property: spring.datasource.username
+      password-property: spring.datasource.password 
+    
+spring:
+  datasource:
+    #這邊是設定要連到資料庫
+    url: jdbc:sqlserver://192.168.239.139:1433;databaseName=tempdb
+
+
+      
